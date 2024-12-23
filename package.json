@@ -2,7 +2,7 @@
   "name": "@mknz/vue-mfe-feature-a",
   "version": "0.1.5",
   "private": false,
-  "description": "Feature A: A Vue 3 Counter component for micro-frontend architecture",
+  "description": "Feature A: A Vue 3 component for micro-frontend architecture",
   "type": "module",
   "main": "./dist/vue-mfe-feature-a.umd.cjs",
   "module": "./dist/vue-mfe-feature-a.js",
@@ -62,7 +62,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mukunzi/vue-mfe-feature-a"
+    "url": "https://github.com/mukunzidd/vue-mfe-feature-a"
   },
   "publishConfig": {
     "access": "public"

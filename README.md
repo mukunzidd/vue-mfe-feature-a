@@ -1,5 +1,8 @@
 # Vue MFE Feature A
 
+[![npm version](https://img.shields.io/npm/v/@mknz/vue-mfe-feature-a)](https://www.npmjs.com/package/@mknz/vue-mfe-feature-a)
+[![Tests](https://img.shields.io/badge/tests-8%20passing-brightgreen)](https://github.com/mukunzidd/vue-mfe-feature-a/actions)
+
 A Vue 3 Counter component for micro-frontend architecture, built with [@mknz/vue-mfe-wrapper](https://www.npmjs.com/package/@mknz/vue-mfe-wrapper).
 
 ## Features
