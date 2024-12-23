@@ -64,6 +64,7 @@
     "type": "git",
     "url": "https://github.com/mukunzidd/vue-mfe-feature-a"
   },
+  "homepage": "https://github.com/mukunzidd/vue-mfe-feature-a#readme",
   "publishConfig": {
     "access": "public"
   }
