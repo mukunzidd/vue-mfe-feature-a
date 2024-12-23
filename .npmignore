@@ -1,0 +1,27 @@
+# Development files
+src/App.vue
+.vscode/
+.idea/
+.git/
+.gitignore
+.eslintrc.*
+.prettierrc.*
+*.config.js
+*.config.ts
+tsconfig*.json
+
+# Test files
+tests/
+coverage/
+*.test.*
+*.spec.*
+
+# Build tools
+vite.config.ts
+vitest.config.ts
+
+# Misc
+.DS_Store
+*.log
+.env*
+node_modules/
