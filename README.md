@@ -1,109 +1,100 @@
-# Vue MFE Feature A
+# Vue MFE Feature A - Counter Component
 
-[![npm version](https://img.shields.io/npm/v/@mknz/vue-mfe-feature-a)](https://www.npmjs.com/package/@mknz/vue-mfe-feature-a)
-[![Tests](https://img.shields.io/badge/tests-8%20passing-brightgreen)](https://github.com/mukunzidd/vue-mfe-feature-a/actions)
+[![Tests](https://img.shields.io/badge/tests-8%20passing-brightgreen.svg)](https://github.com/mukunzidd/vue-mfe-feature-a)
 
-A Vue 3 Counter component for micro-frontend architecture, built with [@mknz/vue-mfe-wrapper](https://www.npmjs.com/package/@mknz/vue-mfe-wrapper).
+A customizable Counter component for Vue.js micro-frontends. Built with Vue 3 and TypeScript.
+
+> 🔗 Part of the Vue MFE ecosystem. Check out [@mknz/vue-mfe-wrapper](https://github.com/mukunzidd/vue-mfe-wrapper) for the core framework.
 
 ## Features
 
-- 🎨 Light and Dark themes
-- 🔢 Customizable step sizes
-- 📊 Min/Max value limits
-- 🎯 Visual feedback when near limits
-- 🔄 Reset functionality
-- 👁️ Show/Hide limits toggle
+- 🎯 Customizable min/max values
+- 🔢 Adjustable step sizes
+- 🌓 Light/Dark theme support
+- 💾 Value validation
+- ⚡️ Performance optimized
 
 ## Installation
 
 ```bash
+# Using npm
 npm install @mknz/vue-mfe-feature-a
+
+# Using bun
+bun add @mknz/vue-mfe-feature-a
 ```
 
-## Usage
-
-### With Vue MFE Wrapper
-
-```typescript
-// features/index.ts
-import { VueMfeFeatureA } from '@mknz/vue-mfe-feature-a'
-import '@mknz/vue-mfe-feature-a/style.css'
-
-export { VueMfeFeatureA }
-```
+## Quick Start
 
 ```vue
-<!-- App.vue -->
-<template>
-  <FrameworkWrapper :config="config">
-    <div v-if="featureLoaded">
-      <Counter
-        title="My Counter"
-        :initial-count="5"
-        theme="light"
-        :min-value="0"
-        :max-value="20"
-        :step-sizes="[1, 2, 5]"
-      />
-    </div>
-  </FrameworkWrapper>
-</template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import { FrameworkWrapper } from '@mknz/vue-mfe-wrapper'
-import { VueMfeFeatureA } from './features'
-
-const config = {
-  features: [VueMfeFeatureA]
-}
-
-const featureLoaded = ref(true)
+<script setup>
+import { Counter } from '@mknz/vue-mfe-feature-a'
 </script>
-```
 
-### Standalone Usage
-
-```vue
 <template>
-  <Counter
+  <Counter 
     title="My Counter"
-    :initial-count="5"
-    theme="light"
+    :initial-count="0"
     :min-value="0"
-    :max-value="20"
-    :step-sizes="[1, 2, 5]"
+    :max-value="100"
+    :step-sizes="[1, 5, 10]"
+    theme="light"
   />
 </template>
-
-<script setup lang="ts">
-import { Counter } from '@mknz/vue-mfe-feature-a'
-import '@mknz/vue-mfe-feature-a/style.css'
-</script>
 ```
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| title | string | 'Counter' | The title displayed above the counter |
-| initialCount | number | 0 | The initial value of the counter |
-| theme | 'light' \| 'dark' | 'light' | The color theme of the counter |
-| minValue | number | 0 | The minimum value the counter can reach |
-| maxValue | number | 100 | The maximum value the counter can reach |
-| stepSizes | number[] | [1, 5, 10] | Available step sizes for incrementing/decrementing |
+| `title` | `string` | `'Counter'` | The title displayed above the counter |
+| `initialCount` | `number` | `0` | Starting value for the counter |
+| `theme` | `'light' \| 'dark'` | `'light'` | Color theme |
+| `minValue` | `number` | `0` | Minimum allowed value |
+| `maxValue` | `number` | `100` | Maximum allowed value |
+| `stepSizes` | `number[]` | `[1, 5, 10]` | Available step sizes for increment/decrement |
 
 ## Methods
 
-The Counter component exposes the following methods:
+The component exposes the following methods:
 
-| Method | Description |
-|--------|-------------|
-| increment() | Increases the counter by the selected step size |
-| decrement() | Decreases the counter by the selected step size |
-| reset() | Resets the counter to its initial value |
-| toggleLimits() | Shows/Hides the min/max value limits |
+- `increment()`: Increase count by current step size
+- `decrement()`: Decrease count by current step size
+- `reset()`: Reset to initial value
+- `toggleLimits()`: Show/hide min/max limits
+
+## Events
+
+- `@update:count`: Emitted when count changes
+- `@limit-reached`: Emitted when min/max limit is reached
+
+## Example with Event Handling
+
+```vue
+<script setup>
+import { Counter } from '@mknz/vue-mfe-feature-a'
+
+const handleCountUpdate = (newCount) => {
+  console.log('New count:', newCount)
+}
+
+const handleLimitReached = () => {
+  console.log('Limit reached!')
+}
+</script>
+
+<template>
+  <Counter 
+    @update:count="handleCountUpdate"
+    @limit-reached="handleLimitReached"
+  />
+</template>
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT
+MIT 
